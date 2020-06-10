@@ -20,10 +20,12 @@ class Main {
     //System.out.println(numbers.indexOf(130));
 
     ArrayList.ListIterator li = numbers.listIterator();
-    System.out.println(li.next());
-    System.out.println(li.next());
-    System.out.println(li.next());
-    System.out.println(li.next());
-
+    while(li.hasNext()){
+      int value = (int)li.next();
+      if(value == 11){
+        li.insert(35);
+      }
+    }
+    System.out.println(numbers);
   }
 }

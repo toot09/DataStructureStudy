@@ -95,7 +95,33 @@ class ArrayList{
     }
 
     // elementation의 다음값이 있는지 확인
+    public boolean hasNext() {
+      return listIndex < size;
+    }
+
+    // 부모계체의 거꾸로 가는 index
+    public Object previous() {
+      return elementation[--listIndex];
+    }
+
+    // elementation의 이전값이 있는지 확인
+    public boolean hasPrevious() {
+      return listIndex > 0;
+    }
+
+    //부모객체의 메서드를 이용할수 있다.
+    public boolean insert(Object element){
+      //listIndex는 하나 더 늘어난다.
+      return ArrayList.this.insert(listIndex++,element);
+    }
+
+    // 현재 엘리먼트를 삭제
+    public void remove(){
+      ArrayList.this.remove(listIndex-1);
+      listIndex--;
+    }
+
 
   }
 
-}
+} 
