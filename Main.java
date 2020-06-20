@@ -1,7 +1,23 @@
+import java.util.*;
 
 class Main {
   public static void main(String[] args) {
     
+    LinkedList numbers = new LinkedList();
+
+    numbers.addFirst(10);
+    numbers.addLast(30);
+    numbers.insert(1,20);
+    numbers.insert(1,21);
+    numbers.insert(1,22);
+    System.out.println(numbers);
+    numbers.removeFirst();
+    System.out.println(numbers);
+    numbers.removeMiddle(3);
+    System.out.println(numbers);
+
+    /* ArrayList Practice Start!!!!
+
     ArrayList numbers = new ArrayList();
     numbers.addLast(1);
     numbers.addLast(2);
@@ -27,5 +43,7 @@ class Main {
       }
     }
     System.out.println(numbers);
+
+    ArrayList Practice End!!! */
   }
 }
