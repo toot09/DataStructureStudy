@@ -15,6 +15,20 @@ class Main {
     System.out.println(numbers);
     numbers.removeMiddle(3);
     System.out.println(numbers);
+    System.out.println(numbers.indexOf(20));
+
+    LinkedList.ListIterator it = numbers.listIterator();
+    while(it.hasNext()) {
+      int test = (int)it.next();
+      System.out.println(test);
+      if(test==22) {
+        it.add(11);
+      }
+      if(test==21) {
+        it.remove();
+      }
+    }
+    System.out.println(numbers);
 
     /* ArrayList Practice Start!!!!
 

@@ -6,7 +6,7 @@ public class LinkedList{
   private Node tail;
   private int size = 0;
 
-  class Node {
+  private class Node {
     private Object data;
     private Node next;
 
@@ -108,6 +108,59 @@ public class LinkedList{
   // return LinkedList size
   public int size() {
     return size;
+  }
+
+  // find data
+  public int indexOf(Object data) {
+    Node node = head;
+    for(int i=0 ; i < size ; i++){
+      if(node.data == data){
+        return i;
+      } 
+      node = node.next;
+    }
+    return -1;
+  }
+
+  public class ListIterator {
+    private Node lastReturned;
+    private Node next;
+    private int nextIndex;
+
+    ListIterator() {
+      next = head;
+      nextIndex = 0;
+    }
+
+    public Object next() {
+      lastReturned = next;
+      next = next.next;
+      nextIndex++;
+      return lastReturned.data;
+    }
+
+    public boolean hasNext() {
+      return nextIndex < size;
+    }
+
+    public void add(Object input) {
+      Node newNode = new Node(input);
+      lastReturned.next = newNode;
+      newNode.next = next;
+      next = newNode;
+      size++;
+    }
+
+    public void remove() {
+      LinkedList.this.removeMiddle(nextIndex-1);
+      nextIndex--;
+    }
+
+  }
+
+  // Create and Return Iterator
+  public ListIterator listIterator(){
+    return new ListIterator();
   }
 
 }
